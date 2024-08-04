@@ -46,9 +46,9 @@ To install the dependencies, run:
 
 ### Data Requirements
 
-The data required to run this project is not available in this repository due to copyright reasons. To run the project, you need a CSV file with the following data columns:
+The data required to run this project is not available in this repository due to copyright reasons. To run the project, you need a CSV file with the following data columns and a corresponding audio file:
 
-    isrc,title,spotify_uri,artist,genre_id,genre_name,category_id,category_name
+    isrc,spotify_uri
 
 ## TouchDesigner Integration
 
