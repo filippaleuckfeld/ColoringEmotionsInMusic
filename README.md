@@ -6,6 +6,8 @@
 
 This project aims to explore how emotions evoked by music can be translated into visual art using color. It is part of a master's thesis at KTH Royal Institute of Technology that investigates the intersection of music, emotion, and generative art.
 
+**Note:** This repository is intended for reference code to the study and is not designed for general use.
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
