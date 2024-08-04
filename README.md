@@ -9,46 +9,12 @@ This project aims to explore how emotions evoked by music can be translated into
 ## Table of Contents
 
 - [Project Overview](#project-overview)
-- [File Structure](#file-structure)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Data Preprocessing](#data-preprocessing)
-- [Understanding the Dataset](#understanding-the-dataset)
-- [Feature Extraction](#feature-extraction)
 - [TouchDesigner Integration](#touchdesigner-integration)
 - [License](#license)
-- [Contributing](#contributing)
 - [Contact](#contact)
 
-## File Structure
-
-The repository is organized as follows:
-
-    ColoringEmotionsInMusic/
-    ├── TouchDesigner/
-    │   └── GenerativePainting_v2.toe
-    ├── src/
-    │   ├── data_collection/
-    │   │   ├── spotify_client.py
-    │   │   └── spotify_data_processor.py
-    │   ├── data_preprocessing/
-    │   │   ├── clean_tracks_file.py
-    │   │   ├── listen.py
-    │   │   └── scatter_matrix.py
-    │   ├── evaluation/
-    │   │   └── random_songs.py
-    │   ├── feature_extraction/
-    │   │   ├── librosa_features.py
-    │   │   ├── loudness.py
-    │   │   ├── main.py
-    │   │   ├── tempo.py
-    │   │   └── utility_functions.py
-    │   └── regression_model/
-    │       └── grid_search.py
-    ├── .gitignore
-    ├── LICENSE
-    ├── README.md
-    └── requirements.txt
+## Installation
 
 ### Prerequisites
 
