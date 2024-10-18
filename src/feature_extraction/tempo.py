@@ -52,11 +52,11 @@ def save_plp_function(audio_path: str, y: np.ndarray, pulse: np.ndarray, sr: int
 def plot_plp_graph(pulse: np.ndarray, beat_times: np.ndarray, sr: int, hop_length: int):
     try:
         times = librosa.times_like(pulse, sr=sr, hop_length=hop_length)
-        fig, ax = plt.subplots(figsize=(10, 8))
+        fig, ax = plt.subplots(figsize=(8, 2))
         ax.plot(times, librosa.util.normalize(pulse), label='PLP', color='b')
         ax.vlines(beat_times, 0, 1, alpha=0.5, color='r', linestyle='--', label='PLP Beats')
         ax.legend()
-        ax.set_title('librosa.beat.plp')
+        ax.set_title('Tempo Over Time')
         ax.xaxis.set_major_formatter(librosa.display.TimeFormatter())
         plt.tight_layout()
         plt.show()
@@ -108,11 +108,11 @@ def plp(y: np.ndarray,
         return {}
 
 if __name__ == "__main__":
-    audio_path = '/Volumes/Samsung T7/tracks/SE5IB2323475.wav'
-    average_bpm = 136  # Example BPM value
+    audio_path = '/Volumes/Samsung T7/tracks/SE5IB2236769.wav'
+    average_bpm = 93  # Example BPM value
 
     mono_audio = load_audio_mono(audio_path)
 
     # Test PLP function
-    summary_stats = plp(mono_audio, audio_path, average_bpm, save_audio_with_clicks=True, save_plp=True, plot_graph=False)
+    summary_stats = plp(mono_audio, audio_path, average_bpm, save_audio_with_clicks=False, save_plp=False, plot_graph=True)
     print("Summary stats:", summary_stats)

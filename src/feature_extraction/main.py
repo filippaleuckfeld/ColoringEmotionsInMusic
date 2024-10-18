@@ -20,16 +20,16 @@ def process_audio_file(audio_path, tempo, isrc):
         stereo_audio = load_audio_stereo(audio_path)
 
         # Extract features and their summary statistics
-        pulse_summary_stats = plp(mono_audio_not_trimmed, audio_path, tempo, save_audio_with_clicks=True, save_plp=True)
-        loudness_summary_stats = analyze_loudness(stereo_audio)
-        centroid_summary_stats = centroid(mono_audio)
-        bandwidth_summary_stats = bandwidth(mono_audio)
-        flatness_summary_stats = flatness(mono_audio)
-        mfcc_features = mfcc(mono_audio)
-        zcr_summary_stats = zero_crossing_rate(mono_audio)
-        chroma_features = chroma(mono_audio)
-        contrast_features = spectral_contrast(mono_audio)
-        rms_summary_stats = rms(mono_audio)
+        pulse_summary_stats = plp(mono_audio_not_trimmed, audio_path, tempo, plot_graph=True, save_audio_with_clicks=False, save_plp=False)
+        loudness_summary_stats = analyze_loudness(stereo_audio, plot_graph=True)
+        centroid_summary_stats = centroid(mono_audio, plot=True)
+        bandwidth_summary_stats = bandwidth(mono_audio, plot=True)
+        flatness_summary_stats = flatness(mono_audio, plot=True)
+        mfcc_features = mfcc(mono_audio, plot=True)
+        zcr_summary_stats = zero_crossing_rate(mono_audio, plot=True)
+        chroma_features = chroma(mono_audio, plot=True)
+        contrast_features = spectral_contrast(mono_audio, plot=True)
+        rms_summary_stats = rms(mono_audio, plot=True)
 
         # Initialize result dictionary with ISRC
         result = {'isrc': isrc}
@@ -94,4 +94,4 @@ def process_rows(df, processed_cache):
            yield result
 
 if __name__ == "__main__":
-    process_csv("tracks_cleaned_features.csv", "tracks_features.csv")
+    process_csv("survey.csv", "survey_result.csv")
